@@ -1,8 +1,8 @@
 import re
-credenciais = dict()
+conta = dict()
 def cadastro():    
     while True: 
-        global credenciais   
+        global conta  
         usuario = input('Digite o seu usuario ')
         nome = input('Digite seu nome completo')
         senha = input('Digite sua senha ')
@@ -16,11 +16,14 @@ def cadastro():
             print('A senha deve ter pelo menos 8 caracteres')
         else:
             break
-    credenciais['usuario'] = usuario
-    credenciais['senha'] = senha  
+    conta['usuario'] = usuario
+    conta['senha'] = senha  
 def login():
-    global credenciais
-    usuario = input('Digite o seu usuario ')
-    senha = input('Digite a senha ')
-    credenciais['usuario'] = usuario
-    credenciais['senha'] = senha
+    global conta
+    username = input('Digite o seu usuario ')
+    password = input('Digite a senha ')
+    if conta == {}:
+        print('Você ainda não possui uma conta')
+    elif username != conta['usuario'] or password != conta['senha']:
+        print('Usuario ou senha inválido')
+    
