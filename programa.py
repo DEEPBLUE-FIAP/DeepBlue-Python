@@ -1,5 +1,8 @@
 import re
 conta = dict()
+lista_praias = []
+num_praias = 0
+votos = []
 def cadastro():    
     while True: 
         global conta  
@@ -26,4 +29,4 @@ def login():
         print('Você ainda não possui uma conta')
     elif username != conta['usuario'] or password != conta['senha']:
         print('Usuario ou senha inválido')
-    
+
