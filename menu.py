@@ -5,7 +5,10 @@ while True:
         1 - Cadastre-se
         2 - Adicione alguma praia que precise de nossa atenção
         3 - Praias para inscrever-se
-        4 - Sair
+        4 - Simulação da praia e pessoa vencedora
+        5 - Sistema de pontos
+        6 - Sair
+          
     ''')
 
     escolha = int(input('Escolha uma opção: '))
@@ -40,9 +43,31 @@ while True:
             else:
                 print("Número da praia inválido.")
         case 4:
+            print('''
+                1-Simulação de pontos
+                2-Simulação de votos
+''')
+            escolha_simulacao = int(input('Digite qual você quer: '))
+            match escolha_simulacao:
+                case 1:
+                    programa.pontos()
+                case 2:            
+                    programa.votos()
+        case 5:
+            print('''
+                1-Cadastro-> 50 pontos.
+                2-Voto-> 05 pontos.
+                3-Presença no evento-> 20 pontos.
+                4-Destaque no evento-> 100 pontos.
+                5-Contribuir com informações sobre espaços sujos-> 1 ponto.
+                6-Adicionar nova praia-> 100 pontos.
+                No fim do mês quem juntou mais pontos ganha:
+                    O primeiro lugar ganha uma viagem para Pensilvânia.
+                    O segundo lugar ganha uma viagem para Angra dos Reis.
+                    O terceiro lugar ganha um kit da empresa ou do orgão que cuidou da empresa.
+''')
+        case 6:
             print("Saindo do programa...")
             break
         case _:
             print("Opção inválida. Tente novamente.")
-
-    
