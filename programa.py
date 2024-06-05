@@ -19,6 +19,7 @@ nomes_praias = [
     "Praia de Atalaia, Aracaju - SE",
     "Praia do Farol da Barra, Salvador - BA"
 ]
+condicao_praia = ['suja', 'muito suja', 'inabitável']
 
 def cadastro():
     global login_status    
@@ -52,7 +53,7 @@ def login():
     
     for conta in contas:
         if conta['usuario'] == usuario and conta['senha'] == senha:
-            print(f'Bem-vindo, {conta["nome"]}!')
+            print(f'Bem-vindo, {conta["usuario"]}!')
             login_status = True  # Marca como logado após um login bem-sucedido
             return True
     print('Usuario ou senha inválido')
@@ -81,15 +82,19 @@ def votos():
     
     print('Classificação das praias:')
     for praia in lista_praias:
-        print(f'{praia["nome"]}: {praia["votos"]} votos')
+        print(f'{praia["nome"]}: {praia["votos"]} votos - {condicao_praia[random.randint(0, 2)]}')
+    
+    # Após a classificação das praias, pergunta ao usuário se deseja se inscrever para ajudar a limpar a praia vencedora
     print('''
 1-Sim
 2-Não''')
-    escolha_inscricao = int(input('Deseja se inscrever para ajudar limpar a praia vencedora?'))
+    
+    escolha_inscricao = int(input('Deseja se inscrever para ajudar limpar a praia vencedora? '))
     match escolha_inscricao:
         case 1:
-            print(f'Você está inscrito na praia {lista_praias[0]["nome"]}')
+            print(f'\nVocê está inscrito na praia {lista_praias[0]["nome"]}')
         case 2:
-            print('Entendo... Poderia nos dizer porque não deseja participar?')
+            print('\nEntendo... Poderia nos dizer porque não deseja participar?')
+            motivo = input('=> ')
         case _:
             print('Opção inválida')

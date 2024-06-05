@@ -8,7 +8,8 @@ while True:
         3 - Praias para votar
         4 - Simulação da praia e pessoa vencedora
         5 - Sistema de pontos
-        6 - Sair
+        6 - Deslogar
+        7 - Sair
     ''')
 
     escolha = int(input('Escolha uma opção: '))
@@ -18,17 +19,20 @@ while True:
             programa.login_status = True  # Marca como logado após o cadastro
         case 2:
             if not programa.login_status:
+                print('Você não está logado')                
                 if not programa.login():
                     print('''
         Cadastre-se.                
         1 - Cadastro
+        2 - Sair                  
     ''')
                     escolha_menu = int(input('Escolha uma opção: '))
                     match escolha_menu:
                         case 1:
                             programa.cadastro()
                             programa.login_status = True  # Marca como logado após o cadastro
-                            
+                        case 2:
+                            print('Voltando a tela inicial...')    
             if programa.login_status:
                 praia = input('Digite o nome da praia: ')
                 programa.lista_praias.append({"nome": praia, "votos": 0})
@@ -54,7 +58,7 @@ while True:
             match escolha_simulacao:
                 case 1:
                     programa.pontos()
-                    
+
                 case 2:            
                     programa.votos()
         case 5:
@@ -71,6 +75,12 @@ while True:
                     O terceiro lugar ganha um kit da empresa ou do órgão que cuidou da empresa.
 ''')
         case 6:
+            if programa.login_status == False:
+                print('Você não está logado.')
+            else:
+                print('Saindo da conta...')
+                programa.login_status = False
+        case 7:
             print("Saindo do programa...")
             break
         case _:
