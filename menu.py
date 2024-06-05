@@ -2,35 +2,38 @@ import programa
 
 while True:
     print('''
+        Bem vindo ao DeepBlue, aqui você ajuda tudo e todos, tornando o mundo um lugar melhor.
         1 - Cadastre-se
         2 - Adicione alguma praia que precise de nossa atenção
-        3 - Praias para inscrever-se
+        3 - Praias para votar
         4 - Simulação da praia e pessoa vencedora
         5 - Sistema de pontos
         6 - Sair
-          
     ''')
 
     escolha = int(input('Escolha uma opção: '))
     match escolha:
         case 1:
             programa.cadastro()
+            programa.login_status = True  # Marca como logado após o cadastro
         case 2:
-            if not programa.login():
-                print('''
+            if not programa.login_status:
+                if not programa.login():
+                    print('''
         Cadastre-se.                
         1 - Cadastro
     ''')
-                escolha_menu = int(input('Escolha uma opção: '))
-                match escolha_menu:
-                    case 1:
-                        programa.cadastro()
-                    
-            praia = input('Digite o nome da praia: ')
-            programa.lista_praias.append({"nome": praia, "votos": 0})
-            print(f'Você adicionou a praia {praia}, agora ela será verificada pelo órgão regulador')   
-            programa.num_praias += 1
-                                    
+                    escolha_menu = int(input('Escolha uma opção: '))
+                    match escolha_menu:
+                        case 1:
+                            programa.cadastro()
+                            programa.login_status = True  # Marca como logado após o cadastro
+                            
+            if programa.login_status:
+                praia = input('Digite o nome da praia: ')
+                programa.lista_praias.append({"nome": praia, "votos": 0})
+                print(f'Você adicionou a praia {praia}, agora ela será verificada pelo órgão regulador')   
+                programa.num_praias += 1
         case 3:
             print("\nPraias disponíveis para votar:")
             for i, praia in enumerate(programa.lista_praias):
@@ -51,6 +54,7 @@ while True:
             match escolha_simulacao:
                 case 1:
                     programa.pontos()
+                    
                 case 2:            
                     programa.votos()
         case 5:
@@ -64,7 +68,7 @@ while True:
                 No fim do mês quem juntou mais pontos ganha:
                     O primeiro lugar ganha uma viagem para Pensilvânia.
                     O segundo lugar ganha uma viagem para Angra dos Reis.
-                    O terceiro lugar ganha um kit da empresa ou do orgão que cuidou da empresa.
+                    O terceiro lugar ganha um kit da empresa ou do órgão que cuidou da empresa.
 ''')
         case 6:
             print("Saindo do programa...")
