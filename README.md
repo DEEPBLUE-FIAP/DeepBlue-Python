@@ -2,14 +2,58 @@ Nomes E RMs de cada aluno:
 Juan Fuentes Rufino - RM557673
 Pedro Batista - RM558137
 Fernando Carlos Colque Huaranca - RM558095
-Python:
-O intuito desse projeto python é simular uma experiência no site DeepBlue. Ele é uma iniciativa para fazer mais pessoas estarem ligadas a limpeza dos mares e sua importância, há 7 opções realizáveis:
-Na opção 1 é possível cadastrar-se.
-Na opção 2 é possível adicionar uma praia ao projeto de limpeza e escolher se você deseja ou não participar da limpeza dela.
-Na opção 3 é possível checar as praias para fazer a votação.
-Na opção 4 é possível simular ou quem ganhou a competição mensal de pontos e a praia vencedora que será limpa.
-Na opção 5 você consegue visualizar como funciona o sistema de pontos para cada pessoa.
-Na opção 6 você sai da conta que está "logada"(poderá ou fazer o login novamente quando for adicionar a praia ou cadastrar-se com uma conta)
-Na opção 7 você sai do programa.
-obs:
-Para que você faça o cadastro a senha precisa de um caractere especial, uma letra maiuscula e pelo menos um número.
+   
+DeepBlue-python_project:
+
+1-Cadastro
+
+    Escolha a opção 1 no menu principal.
+    Insira os detalhes solicitados: usuário, nome completo, senha, CPF, e email.
+    A senha deve conter pelo menos um caractere especial, uma letra maiúscula e ter no mínimo 8 caracteres.
+    Após o cadastro bem-sucedido, o usuário será automaticamente autenticado.
+
+2-Adicionar Praia
+
+    Escolha a opção 2 no menu principal.
+    Se não estiver autenticado, será solicitado o login.
+    Após a autenticação, insira o nome da praia que deseja adicionar.
+    A praia será adicionada à lista de praias que precisam de atenção.
+
+3-Votação em Praias
+
+    Escolha a opção 3 no menu principal.
+    Uma lista de praias disponíveis para votar será exibida.
+    Digite o número correspondente à praia em que deseja votar.
+    A praia receberá um voto.
+
+4-Simulação
+
+    Escolha a opção 4 no menu principal.
+    Selecione entre simulação de pontos (opção 1) ou simulação de votos (opção 2).
+    A simulação de pontos mostra a classificação das pessoas com base nos pontos acumulados.
+    A simulação de votos mostra a classificação das praias com base nos votos recebidos.
+
+5-Sistema de Pontos
+
+    Escolha a opção 5 no menu principal.
+    Uma descrição detalhada de como os pontos são acumulados e os prêmios mensais será exibida.
+
+6-Logout
+
+    Escolha a opção 6 no menu principal para deslogar do sistema.
+
+7-Sair
+
+    Escolha a opção 7 no menu principal para encerrar o programa.
+
+-Requisitos
+    Python 3.x
+    Nenhuma biblioteca adicional é necessária.
+    Dependências
+    O projeto não possui dependências externas e utiliza apenas a biblioteca padrão do Python.
+Informações Relevantes
+    Certifique-se de que todas as entradas fornecidas pelo usuário sejam válidas para evitar erros.
+    A senha deve atender aos critérios de segurança descritos para ser aceita.
+    O sistema de pontos é uma parte importante da aplicação e incentiva a participação ativa dos usuários.
+    A aplicação deve ser executada em um ambiente onde o Python 3.x esteja instalado corretamente.
+

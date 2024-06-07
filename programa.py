@@ -30,7 +30,7 @@ def cadastro():
     email = input('Digite seu email: ')
     while True:
         # Validação de senha
-        if not re.search(r'[!@#$%^&*(),.?":{}|<>]', senha):
+        if not re.search(r'[!@#$%^&*(),.?":{}|<>_-]', senha):
             print('A senha deve conter pelo menos um caractere especial')
             senha = input('Digite sua senha: ')
         elif not re.search(r'[A-Z]', senha):
