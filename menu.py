@@ -15,7 +15,12 @@ while True:
     escolha = int(input('Escolha uma opção: '))
     match escolha:
         case 1:
-            programa.cadastro()
+            usuario = input('Digite o seu usuário: ')
+            nome = input('Digite seu nome completo: ')
+            senha = input('Digite sua senha: ')
+            cpf = input('Digite seu CPF: ')
+            email = input('Digite seu email: ')
+            programa.cadastro(usuario, nome, senha, cpf, email)
             programa.login_status = True  # Marca como logado após o cadastro
         case 2:
             if not programa.login_status:
@@ -29,7 +34,12 @@ while True:
                     escolha_menu = int(input('Escolha uma opção: '))
                     match escolha_menu:
                         case 1:
-                            programa.cadastro()
+                            usuario = input('Digite o seu usuário: ')
+                            nome = input('Digite seu nome completo: ')
+                            senha = input('Digite sua senha: ')
+                            cpf = input('Digite seu CPF: ')
+                            email = input('Digite seu email: ')
+                            programa.cadastro(usuario, nome, senha, cpf, email)
                             programa.login_status = True  # Marca como logado após o cadastro
                         case 2:
                             print('Voltando à tela inicial...')

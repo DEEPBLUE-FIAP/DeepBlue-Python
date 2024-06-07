@@ -21,13 +21,9 @@ nomes_praias = [
 condicao_praia = ['suja', 'muito suja', 'inabitável']
 
 
-def cadastro():
+def cadastro(usuario, nome, senha, cpf, email):
     global login_status
-    usuario = input('Digite o seu usuário: ')
-    nome = input('Digite seu nome completo: ')
-    senha = input('Digite sua senha: ')
-    cpf = input('Digite seu CPF: ')
-    email = input('Digite seu email: ')
+    
     while True:
         # Validação de senha
         if not re.search(r'[!@#$%^&*(),.?":{}|<>_-]', senha):
